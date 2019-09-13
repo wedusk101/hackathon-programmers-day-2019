@@ -1,2 +1,3 @@
-# hackathon-programmers-day-2019
- A programming challenge where we try to build something fun and interesting in less than 256 lines of code
+# Hackathon  Programmer's day 2019
+
+ A programming challenge where we try to build something fun and interesting in less than 256 lines of code.
