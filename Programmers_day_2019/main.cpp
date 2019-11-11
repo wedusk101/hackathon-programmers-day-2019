@@ -15,7 +15,7 @@ struct Vec2
 
 	void draw(char ch)
 	{ 
-		frameBuffer[(int)y * height + (int)x] = ch;
+		frameBuffer[(int)y * width + (int)x] = ch;
 		WriteConsoleOutputCharacter(hAppWnd, (LPCTSTR)frameBuffer, bufferSize, { 0, 0 }, &bytesWritten);
 	}
 };
