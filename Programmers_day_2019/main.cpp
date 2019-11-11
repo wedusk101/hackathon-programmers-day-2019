@@ -48,19 +48,48 @@ struct Paddle
 
 int main()
 {
-	SetConsoleActiveScreenBuffer(hAppWnd); clearFrameBuffer();
+	SetConsoleActiveScreenBuffer(hAppWnd);
+	clearFrameBuffer();
 	Vec2 src = Vec2(0, 0);
 	Vec2 dst = Vec2(0, 40);
 	Paddle leftPaddle(Vec2(0, 19));
 	bool isSpace = false;
 
+	// leftPaddle.draw();
+	char ch = 0xB2;
+	src.draw(ch);
 	while (true)
 	{
-		src.draw('*');
-		dst.draw('*');
-		leftPaddle.draw();
-		if (GetAsyncKeyState(VK_SPACE))
+		// src.draw('*');
+		// dst.draw('*');
+
+		if (GetAsyncKeyState(VK_UP))
+		{
+			src.y--;
 			clearFrameBuffer();
+			src.draw(ch);
+		}
+
+		if (GetAsyncKeyState(VK_DOWN))
+		{
+			src.y++;
+			clearFrameBuffer();
+			src.draw(ch);
+		}
+
+		if (GetAsyncKeyState(VK_RIGHT))
+		{
+			src.x++;
+			clearFrameBuffer();
+			src.draw(ch);
+		}
+
+		if (GetAsyncKeyState(VK_LEFT))
+		{
+			src.x--;
+			clearFrameBuffer();
+			src.draw(ch);
+		}
 	}
 
 	delete[] frameBuffer;
